@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142747">
+  <title>AkademikKu | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="brand">
+      <span class="brand-logo">A</span>
+      <span>Akademik<span class="brand-accent">Ku</span><small>HANSHIKHA</small></span>
+    </a>
+    <p class="nav-label">MENU UTAMA</p>
+    <nav class="side-nav">
+      <a class="nav-link active" href="index.html"><span>⌂</span>Dashboard</a>
+      <a class="nav-link" href="pelajaran.html"><span>▤</span>Pelajaran</a>
+      <a class="nav-link" href="jadwal.html"><span>▦</span>Jadwal Belajar</a>
+      <a class="nav-link" href="tugas.html"><span>✓</span>Daftar Tugas <b id="sidebarTaskCount">0</b></a>
+    </nav>
+    <div class="sidebar-tip">
+      <span class="tip-icon">✦</span>
+      <h3>Keep learning!</h3>
+      <p>Langkah kecil hari ini bisa menjadi pencapaian besar esok hari.</p>
+      <a href="tugas.html">Lihat tugas <span>→</span></a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="mini-logo">A</div>
+      <div><strong>AkademikKu</strong><small>Ruang belajar kelas IX</small></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-start">
+        <button class="menu-toggle" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+        <div><div class="breadcrumb">Workspace / Dashboard</div><p class="topbar-caption">Semua kegiatan belajarmu dalam satu tempat.</p></div>
+      </div>
+      <div class="topbar-end">
+        <div class="date-pill" id="currentDate">Tanggal hari ini</div>
+        <div class="profile-avatar">HA</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><i></i> YOUR LEARNING SPACE</span>
+        <h1>Selamat datang di<br><span>AkademikKu.</span></h1>
+        <p>Atur jadwal, kelola tugas sekolah, dan pantau progres belajarmu dengan lebih teratur.</p>
+        <div class="hero-actions">
+          <a class="button-primary" href="tugas.html">Kelola Tugas <span>→</span></a>
+          <a class="button-text" href="jadwal.html">Lihat Jadwal</a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="hero-circle circle-one"></div>
+        <div class="hero-circle circle-two"></div>
+        <div class="hero-spark">✦</div>
+        <div class="illustration-book book-back"></div>
+        <div class="illustration-book book-front"><small>MY</small><strong>STUDY</strong><span>✦</span></div>
+        <div class="illustration-paper"><strong>Today's goals</strong><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-check">✓ Keep learning</div></div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon blue-icon">▤</span><span class="stat-label">TOTAL TUGAS</span></div><div class="stat-number" id="totalTasks">0</div><p>Semua tugas tercatat</p><div class="stat-foot">Daftar tugasmu</div></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon green-icon">✓</span><span class="stat-label">TUGAS SELESAI</span></div><div class="stat-number" id="completedTasks">0</div><p>Tugas yang telah selesai</p><div class="stat-foot">Pencapaianmu</div></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon orange-icon">◷</span><span class="stat-label">BELUM SELESAI</span></div><div class="stat-number" id="pendingTasks">0</div><p>Tugas yang perlu dikerjakan</p><div class="stat-foot">Tetap semangat</div></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon purple-icon">↗</span><span class="stat-label">PROGRES BELAJAR</span></div><div class="stat-number"><span id="progressPercent">0</span><small>%</small></div><p>Persentase tugas selesai</p><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="stat-foot" id="progressLabel">Mulai langkah pertamamu</div></article>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><div><span class="section-kicker">QUICK ACCESS</span><h2>Ruang Belajarmu</h2><p>Pilih menu untuk mulai mengatur kegiatan.</p></div></div>
+      <div class="quick-grid">
+        <a href="pelajaran.html" class="quick-card"><span class="quick-icon blue-icon">▤</span><h3>Mata Pelajaran</h3><p>Lihat daftar pelajaran kelas IX.</p><span class="quick-arrow">Buka pelajaran →</span></a>
+        <a href="jadwal.html" class="quick-card"><span class="quick-icon green-icon">▦</span><h3>Jadwal Mingguan</h3><p>Pilih hari dan lihat jadwal belajarmu.</p><span class="quick-arrow">Buka jadwal →</span></a>
+        <a href="tugas.html" class="quick-card"><span class="quick-icon purple-icon">✓</span><h3>Daftar Tugas</h3><p>Tambah dan pantau pekerjaan sekolah.</p><span class="quick-arrow">Buka tugas →</span></a>
+      </div>
+    </section>
+
+    <section class="motivation-panel"><div class="motivation-symbol">✦</div><div><span class="section-kicker">A LITTLE REMINDER</span><h2>Progress, not perfection.</h2><p>Tak harus langsung hebat. Yang penting terus belajar dan berusaha.</p></div></section>
+    <footer class="footer"><a href="index.html" class="footer-brand">A Akademik<span>Ku</span></a><p>Belajar lebih teratur, raih masa depan lebih baik.</p><span>© <span id="currentYear"></span> AkademikKu</span></footer>
+  </main>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AkademikKu | Daftar Tugas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="brand"><span class="brand-logo">A</span><span>Akademik<span class="brand-accent">Ku</span><small>STUDENT SPACE</small></span></a>
+    <p class="nav-label">MENU UTAMA</p>
+    <nav class="side-nav">
+      <a class="nav-link" href="index.html"><span>⌂</span>Dashboard</a>
+      <a class="nav-link" href="pelajaran.html"><span>▤</span>Pelajaran</a>
+      <a class="nav-link" href="jadwal.html"><span>▦</span>Jadwal Belajar</a>
+      <a class="nav-link active" href="tugas.html"><span>✓</span>Daftar Tugas <b id="sidebarTaskCount">0</b></a>
+    </nav>
+    <div class="sidebar-tip"><span class="tip-icon">✦</span><h3>One task at a time!</h3><p>Selesaikan satu tugas, lalu lanjutkan ke tugas berikutnya.</p><a href="jadwal.html">Lihat jadwal →</a></div>
+    <div class="sidebar-bottom"><div class="mini-logo">A</div><div><strong>AkademikKu</strong><small>Ruang belajar kelas IX</small></div></div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><div class="topbar-start"><button class="menu-toggle" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button><div><div class="breadcrumb">Workspace / Daftar Tugas</div><p class="topbar-caption">Catat tugas dan pantau penyelesaiannya.</p></div></div><div class="topbar-end"><div class="date-pill" id="currentDate"></div><div class="profile-avatar">IX</div></div></header>
+
+    <section class="page-banner"><span class="eyebrow"><i></i> STAY ORGANIZED</span><h1>Daftar Tugas</h1><p>Tambahkan tugas sekolah, atur tenggat waktu, dan tandai yang telah selesai.</p><span class="page-badge">TASK MANAGER</span></section>
+
+    <section class="stats-grid task-stats">
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon blue-icon">▤</span><span class="stat-label">TOTAL TUGAS</span></div><div class="stat-number" id="totalTasks">0</div><p>Semua tugas tercatat</p></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon green-icon">✓</span><span class="stat-label">SELESAI</span></div><div class="stat-number" id="completedTasks">0</div><p>Tugas telah dikerjakan</p></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon orange-icon">◷</span><span class="stat-label">BELUM SELESAI</span></div><div class="stat-number" id="pendingTasks">0</div><p>Tugas yang tersisa</p></article>
+      <article class="stat-card"><div class="stat-heading"><span class="stat-icon purple-icon">↗</span><span class="stat-label">PROGRES</span></div><div class="stat-number"><span id="progressPercent">0</span><small>%</small></div><p>Progres tugas selesai</p><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="stat-foot" id="progressLabel">Mulai langkah pertamamu</div></article>
+    </section>
+
+    <section class="content-section">
+      <div class="panel task-panel">
+        <div class="task-form-heading"><div><h3>Tambah Tugas Baru</h3><p>Isi detail tugasmu pada formulir berikut.</p></div><span class="task-form-icon">＋</span></div>
+        <form id="taskForm" class="task-form">
+          <div class="form-field task-name-field"><label for="taskName">Nama tugas</label><input id="taskName" name="taskName" type="text" maxlength="100" placeholder="Contoh: Latihan Matematika halaman 25" required></div>
+          <div class="form-field"><label for="taskSubject">Mata pelajaran</label><select id="taskSubject" name="taskSubject" required><option>Matematika</option><option>IPA</option><option>Bahasa Indonesia</option><option>Bahasa Inggris</option><option>IPS</option><option>PKN</option><option>PJOK</option><option>TIK / Informatika</option><option>Agama</option><option>Seni Lukis / SBK</option><option>Lainnya</option></select></div>
+          <div class="form-field"><label for="taskDue">Batas pengumpulan</label><input id="taskDue" name="taskDue" type="date"></div>
+          <button type="submit" class="button-primary add-task-button">＋ Tambah Tugas</button>
+        </form>
+
+        <div class="task-list-heading"><h3>Tugas Saya</h3><div class="task-filters" id="taskFilters"><button type="button" class="filter-button active" data-filter="all">Semua</button><button type="button" class="filter-button" data-filter="pending">Belum selesai</button><button type="button" class="filter-button" data-filter="completed">Selesai</button></div></div>
+        <div class="task-list" id="taskList"></div>
+        <div class="empty-state" id="emptyState"><span>✓</span><h3>Belum ada tugas</h3><p>Tambahkan tugas pertama kamu menggunakan formulir di atas.</p></div>
+      </div>
+    </section>
+
+    <section class="motivation-panel"><div class="motivation-symbol">✦</div><div><span class="section-kicker">YOU CAN DO IT</span><h2>Satu tugas pada satu waktu.</h2><p>Setiap tugas yang selesai adalah kemajuan untuk dirimu.</p></div></section>
+    <footer class="footer"><a href="index.html" class="footer-brand">A Akademik<span>Ku</span></a><p>Belajar lebih teratur, raih masa depan lebih baik.</p><span>© <span id="currentYear"></span> AkademikKu</span></footer>
+  </main>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+</body>
+</html>

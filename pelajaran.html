@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142747">
+  <title>AkademikKu | Pelajaran</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="brand">
+      <span class="brand-logo">A</span>
+      <span>Akademik<span class="brand-accent">Ku</span>
+        <small>HANSHIKHA</small>
+      </span>
+    </a>
+
+    <p class="nav-label">MENU UTAMA</p>
+
+    <nav class="side-nav">
+      <a class="nav-link" href="index.html"><span>⌂</span>Dashboard</a>
+      <a class="nav-link active" href="pelajaran.html"><span>▤</span>Pelajaran</a>
+      <a class="nav-link" href="jadwal.html"><span>▦</span>Jadwal Belajar</a>
+      <a class="nav-link" href="tugas.html">
+        <span>✓</span>Daftar Tugas
+        <b id="sidebarTaskCount">0</b>
+      </a>
+    </nav>
+
+    <div class="sidebar-tip">
+      <span class="tip-icon">✦</span>
+      <h3>Keep learning!</h3>
+      <p>Luangkan waktu untuk memahami setiap pelajaran.</p>
+      <a href="jadwal.html">Lihat jadwal →</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="mini-logo">A</div>
+      <div>
+        <strong>AkademikKu</strong>
+        <small>Ruang belajar kelas IX</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div class="topbar-start">
+        <button class="menu-toggle" id="menuBtn"
+          aria-label="Buka menu" aria-expanded="false">☰</button>
+        <div>
+          <div class="breadcrumb">Workspace / Pelajaran</div>
+          <p class="topbar-caption">Kenali dan atur kegiatan belajarmu.</p>
+        </div>
+      </div>
+
+      <div class="topbar-end">
+        <div class="date-pill" id="currentDate"></div>
+        <div class="profile-avatar">HA</div>
+      </div>
+    </header>
+
+    <!-- BANNER PELAJARAN -->
+    <section class="page-banner">
+      <span class="eyebrow"><i></i> YOUR SUBJECTS</span>
+      <h1>Ruang Pelajaran</h1>
+      <p>
+        Semua mata pelajaran kelas IX dalam satu tempat.
+        Temukan, pelajari, dan kembangkan kemampuanmu setiap hari.
+      </p>
+      <span class="page-badge">KELAS IX · 17 PELAJARAN</span>
+    </section>
+
+    <!-- DAFTAR MATA PELAJARAN -->
+    <section class="content-section">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">SUBJECT COLLECTION</span>
+          <h2>Mata Pelajaran</h2>
+          <p>Yuk, kenali setiap pelajaran yang kamu pelajari di sekolah.</p>
+        </div>
+        <span class="section-counter">17 PELAJARAN</span>
+      </div>
+
+      <div class="subject-grid">
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon math">∑</span>
+            <span class="subject-number">01</span>
+          </div>
+          <h3>Matematika</h3>
+          <p>Rumus, angka, logika, dan pemecahan masalah.</p>
+          <div class="subject-foot"><i class="subject-dot dot-blue"></i> MTK</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon science">⚗</span>
+            <span class="subject-number">02</span>
+          </div>
+          <h3>IPA</h3>
+          <p>Mengenal alam, makhluk hidup, dan fenomena sains.</p>
+          <div class="subject-foot"><i class="subject-dot dot-green"></i> ILMU PENGETAHUAN ALAM</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon language">Aa</span>
+            <span class="subject-number">03</span>
+          </div>
+          <h3>Bahasa Indonesia</h3>
+          <p>Melatih kemampuan membaca, menulis, dan berbicara.</p>
+          <div class="subject-foot"><i class="subject-dot dot-orange"></i> BAHASA</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon english">Ab</span>
+            <span class="subject-number">04</span>
+          </div>
+          <h3>Bahasa Inggris</h3>
+          <p>Belajar kosakata, tata bahasa, dan komunikasi.</p>
+          <div class="subject-foot"><i class="subject-dot dot-purple"></i> ENGLISH</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon civics">⚖</span>
+            <span class="subject-number">06</span>
+          </div>
+          <h3>PKN</h3>
+          <p>Memahami Pancasila, kewarganegaraan, dan tanggung jawab.</p>
+          <div class="subject-foot"><i class="subject-dot dot-green"></i> PENDIDIKAN PANCASILA</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon sport">↗</span>
+            <span class="subject-number">07</span>
+          </div>
+          <h3>PJOK</h3>
+          <p>Mengenal olahraga, kesehatan, dan kebugaran tubuh.</p>
+          <div class="subject-foot"><i class="subject-dot dot-orange"></i> OLAHRAGA</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon technology">⌘</span>
+            <span class="subject-number">08</span>
+          </div>
+          <h3>TIK / Informatika</h3>
+          <p>Mengembangkan keterampilan teknologi dan digital.</p>
+          <div class="subject-foot"><i class="subject-dot dot-purple"></i> TEKNOLOGI</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon religion">✧</span>
+            <span class="subject-number">09</span>
+          </div>
+          <h3>Agama</h3>
+          <p>Mempelajari nilai agama, moral, dan perilaku baik.</p>
+          <div class="subject-foot"><i class="subject-dot dot-green"></i> PENDIDIKAN AGAMA</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon art">✎</span>
+            <span class="subject-number">10</span>
+          </div>
+          <h3>SBK</h3>
+          <p>Mengenal seni budaya dan mengembangkan kreativitas.</p>
+          <div class="subject-foot"><i class="subject-dot dot-orange"></i> SENI BUDAYA DAN KETERAMPILAN</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon art">✿</span>
+            <span class="subject-number">11</span>
+          </div>
+          <h3>Seni Lukis</h3>
+          <p>Mengeksplorasi warna, teknik melukis, dan imajinasi.</p>
+          <div class="subject-foot"><i class="subject-dot dot-orange"></i> SENI RUPA</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon english">文</span>
+            <span class="subject-number">12</span>
+          </div>
+          <h3>Bahasa Mandarin</h3>
+          <p>Belajar kosakata, karakter, dan percakapan Mandarin.</p>
+          <div class="subject-foot"><i class="subject-dot dot-purple"></i> BAHASA ASING</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon technology">✂</span>
+            <span class="subject-number">13</span>
+          </div>
+          <h3>Prakarya</h3>
+          <p>Membuat karya kreatif dan mengenal keterampilan praktis.</p>
+          <div class="subject-foot"><i class="subject-dot dot-green"></i> KETERAMPILAN</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon math">↗</span>
+            <span class="subject-number">14</span>
+          </div>
+          <h3>Ekonomi</h3>
+          <p>Memahami kebutuhan, kegiatan ekonomi, dan keuangan.</p>
+          <div class="subject-foot"><i class="subject-dot dot-blue"></i> ILMU EKONOMI</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon social">♧</span>
+            <span class="subject-number">15</span>
+          </div>
+          <h3>Sosiologi</h3>
+          <p>Mempelajari interaksi manusia dan kehidupan sosial.</p>
+          <div class="subject-foot"><i class="subject-dot dot-green"></i> ILMU SOSIAL</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon science">⌖</span>
+            <span class="subject-number">16</span>
+          </div>
+          <h3>Geografi</h3>
+          <p>Mengenal wilayah, lingkungan, dan fenomena bumi.</p>
+          <div class="subject-foot"><i class="subject-dot dot-blue"></i> ILMU BUMI</div>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-top">
+            <span class="subject-icon religion">◷</span>
+            <span class="subject-number">17</span>
+          </div>
+          <h3>Sejarah</h3>
+          <p>Memahami peristiwa masa lalu dan perkembangannya.</p>
+          <div class="subject-foot"><i class="subject-dot dot-orange"></i> ILMU SEJARAH</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MOTIVASI -->
+    <section class="motivation-panel">
+      <div class="motivation-symbol">✦</div>
+      <div>
+        <span class="section-kicker">KEEP EXPLORING</span>
+        <h2>Belajar satu hal baru setiap hari.</h2>
+        <p>Terus berkembang, temukan hal baru, dan jangan takut mencoba.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="index.html" class="footer-brand">A Akademik<span>Ku</span></a>
+      <p>Belajar lebih teratur, raih masa depan lebih baik.</p>
+      <span>© <span id="currentYear"></span> AkademikKu</span>
+    </footer>
+
+  </main>
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+</body>
+</html>

@@ -35,30 +35,28 @@ function updateDate() {
 
 /* ===== MENU MOBILE ===== */
 
-/* ===== MENU MOBILE ===== */
-
 function setupMobileMenu() {
-  const menuButton = document.getElementById("menuBtn");
-  const overlay = document.getElementById("mobileOverlay");
+  const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("mobileOverlay");
 
-  if (!menuButton || !sidebar || !overlay) return;
+  if (!menuBtn || !sidebar || !overlay) return;
 
   function openMenu() {
-    document.body.classList.add("menu-open");
     sidebar.classList.add("open");
     overlay.classList.add("show");
-    menuButton.setAttribute("aria-expanded", "true");
+    menuBtn.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
   }
 
   function closeMenu() {
-    document.body.classList.remove("menu-open");
     sidebar.classList.remove("open");
     overlay.classList.remove("show");
-    menuButton.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
   }
 
-  menuButton.addEventListener("click", () => {
+  menuBtn.addEventListener("click", function () {
     if (sidebar.classList.contains("open")) {
       closeMenu();
     } else {
@@ -68,12 +66,20 @@ function setupMobileMenu() {
 
   overlay.addEventListener("click", closeMenu);
 
-  sidebar.querySelectorAll("a").forEach(link => {
+  sidebar.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", closeMenu);
   });
 
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeMenu();
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 680) {
+      closeMenu();
+    }
   });
 }
 /* ===== NAVIGASI AKTIF ===== */
@@ -566,16 +572,5 @@ function renderSchedule(day) {
 
     row.append(lessonCell, timeCell, subjectCell);
     body.appendChild(row);
-  });
-}
-
-function setupMobileMenu() {
-  const menuButton = document.querySelector("#menuToggle");
-  const sidebar = document.querySelector(".sidebar");
-
-  if (!menuButton || !sidebar) return;
-
-  menuButton.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
   });
 }

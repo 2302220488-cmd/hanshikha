@@ -2292,3 +2292,90 @@ img {
     cursor: pointer;
   }
 }
+
+/* ==========================================
+   FIX NAVBAR MOBILE - AKADEMIKKU
+========================================== */
+
+.mobile-overlay {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #sidebar.sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    max-width: 85vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 27px 19px 18px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1001;
+    transform: translateX(-110%);
+    visibility: hidden;
+    transition:
+      transform 0.28s ease,
+      visibility 0.28s ease;
+    box-shadow: none;
+  }
+
+  #sidebar.sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 15px 0 45px rgba(0, 0, 0, 0.35);
+  }
+
+  #mobileOverlay {
+    display: none;
+  }
+
+  #mobileOverlay.show {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(2, 8, 22, 0.72);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+
+  #menuBtn {
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1002;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 681px) {
+  #sidebar.sidebar {
+    transform: none;
+    visibility: visible;
+  }
+
+  #mobileOverlay {
+    display: none !important;
+  }
+}

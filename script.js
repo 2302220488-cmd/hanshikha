@@ -35,6 +35,8 @@ function updateDate() {
 
 /* ===== MENU MOBILE ===== */
 
+/* ===== MENU MOBILE ===== */
+
 function setupMobileMenu() {
   const menuButton = document.getElementById("menuBtn");
   const overlay = document.getElementById("mobileOverlay");
@@ -42,14 +44,26 @@ function setupMobileMenu() {
 
   if (!menuButton || !sidebar || !overlay) return;
 
+  function openMenu() {
+    document.body.classList.add("menu-open");
+    sidebar.classList.add("open");
+    overlay.classList.add("show");
+    menuButton.setAttribute("aria-expanded", "true");
+  }
+
   function closeMenu() {
     document.body.classList.remove("menu-open");
+    sidebar.classList.remove("open");
+    overlay.classList.remove("show");
     menuButton.setAttribute("aria-expanded", "false");
   }
 
   menuButton.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("menu-open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
+    if (sidebar.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   overlay.addEventListener("click", closeMenu);
@@ -62,7 +76,6 @@ function setupMobileMenu() {
     if (event.key === "Escape") closeMenu();
   });
 }
-
 /* ===== NAVIGASI AKTIF ===== */
 
 function setupActiveNavigation() {

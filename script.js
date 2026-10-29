@@ -555,3 +555,14 @@ function renderSchedule(day) {
     body.appendChild(row);
   });
 }
+
+function setupMobileMenu() {
+  const menuButton = document.querySelector("#menuToggle");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (!menuButton || !sidebar) return;
+
+  menuButton.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+  });
+}
